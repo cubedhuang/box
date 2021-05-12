@@ -38,7 +38,7 @@
 		<title>box</title>
 	</head>
 
-	<body>
+	<body onclick="document.querySelector('audio').play();document.querySelector('span').remove()">
 		<div class="scene">
 			<div class="floor"></div>
 			<div class="cube">
@@ -51,5 +51,9 @@
 			</div>
 			<div class="ball"></div>
 		</div>
+
+		<span>click anywhere</span>
+
+		<audio src="./hip_shop.ogg" autoplay loop></audio>
 	</body>
 </html>

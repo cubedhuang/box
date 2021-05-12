@@ -176,3 +176,15 @@ body {
 		repeating-conic-gradient(from 45deg, #111 0deg 90deg, #222 90deg 180deg);
 	background-size: 100%, 1rem 1rem;
 }
+
+/* span */
+
+span {
+	position: absolute;
+	bottom: 1px;
+	right: 1px;
+	color: #222;
+	font-size: 0.2rem;
+	font-family: system-ui;
+	user-select: none;
+}
