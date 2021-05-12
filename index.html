@@ -63,6 +63,23 @@
 						src.connect(actx.destination);
 						src.loop = true;
 						src.start();
+
+						if (src.context.currentTime === 0) {
+							const span = document.createElement("span");
+							span.textContent = "click anywhere";
+							document.body.append(span);
+
+							const start = e => {
+								try {
+									src.start();
+								} catch { } finally {
+									span.remove();
+									document.body.removeEventListener("click", start);
+								}
+							}
+
+							document.body.addEventListener("click", start);
+						}
 					});
 				});
 		</script>
