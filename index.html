@@ -38,7 +38,7 @@
 		<title>box</title>
 	</head>
 
-	<body onclick="document.querySelector('audio').play();document.querySelector('span').remove()">
+	<body>
 		<div class="scene">
 			<div class="floor"></div>
 			<div class="cube">
@@ -52,8 +52,19 @@
 			<div class="ball"></div>
 		</div>
 
-		<span>click anywhere</span>
-
-		<audio src="./hip_shop.ogg" autoplay loop></audio>
+		<script>
+			fetch("./hip_shop.ogg", { mode: "cors" })
+				.then(res => res.arrayBuffer())
+				.then(buffer => {
+					const actx = new AudioContext();
+					actx.decodeAudioData(buffer, decoded => {
+						const src = actx.createBufferSource();
+						src.buffer = decoded;
+						src.connect(actx.destination);
+						src.loop = true;
+						src.start();
+					});
+				});
+		</script>
 	</body>
 </html>
