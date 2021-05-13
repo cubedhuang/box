@@ -11,7 +11,7 @@ body {
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	font-size: 1px;
+	font-size: calc(100vmin / 15);
 
 	display: flex;
 	justify-content: center;
@@ -25,6 +25,10 @@ body {
 
 @keyframes grow {
 	from {
+		font-size: calc(100vmin / 15);
+	}
+
+	0.1% {
 		font-size: 1px;
 		opacity: 0;
 	}
@@ -108,7 +112,7 @@ body {
 .cube * {
 	background: var(--cube);
 	position: absolute;
-	box-shadow: 0 0 0.5em #000b inset;
+	box-shadow: 0 0 0em 0.1em #0004 inset;
 }
 
 .left,
